@@ -6,7 +6,7 @@ app = Flask(__name__)
 summaries = {}  # Dictionary to store summaries
 
 # Set your OpenAI API key
-openai.api_key = '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'
+openai.api_key = 'INSERT API KEY HERE'
 @app.route('/')
 def index():
     return render_template('index1.html')
