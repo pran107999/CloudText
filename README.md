@@ -14,17 +14,14 @@ Generate Summary: Initiate the tool to generate a concise summary of the provide
 
 # Installation
 To set up the application locally, follow these steps:
+
 Clone the repository:
-bash
-Copy code
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/VineetKurapati/Text-Summeriser_CloudComputing.git
+
 Install dependencies:
-bash
-Copy code
 pip install -r requirements.txt
+
 Run the application:
-bash
-Copy code
 python app.py
 
 # Technologies Used
