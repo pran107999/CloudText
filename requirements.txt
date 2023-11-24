@@ -1,0 +1,9 @@
+Flask==2.2.2
+Werkzeug==2.2.2
+Jinja2==3.1.2
+ItsDangerous==2.1.2
+Click==8.1.2
+Markupsafe==2.1.1
+Jinja2-cli==0.8.2
+PyPDF2==3.0.1
+openai==0.28.0
