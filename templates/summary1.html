@@ -105,19 +105,18 @@
     <div class="container">
         <h1>Summary</h1>
         <div class="summary-box">
+            <!-- Inject the summary data from Flask into the HTML -->
             <p>{{ summary }}</p>
-            <a href="/">Back to Input</a>
         </div>
+        <a href="/">Back to Input</a>
         <label class="dark-switch">
-            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <input type="switch" id="darkModeToggle" onclick="toggleDarkMode()">
             <span class="slider"></span>
         </label>
     </div>
     <script>
-        // Check if dark mode is enabled in localStorage
         const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-        // Apply dark mode to body if enabled
         if (isDarkMode) {
             document.body.classList.add('dark-mode');
             document.getElementById('darkModeToggle').checked = true;
