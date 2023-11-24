@@ -6,7 +6,7 @@ app = Flask(__name__)
 summaries = {}
 
 
-openai.api_key = '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'
+openai.api_key = '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'
 MAX_TOKENS = 4000
 
 @app.route('/')
