@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, jsonify
-from google.cloud import storage
 from PyPDF2 import PdfReader
 import openai
 
@@ -7,7 +6,7 @@ app = Flask(__name__)
 summaries = {}
 
 
-openai.api_key = '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'
+openai.api_key = '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'
 MAX_TOKENS = 4000
 
 @app.route('/')
