@@ -20,3 +20,6 @@ handlers:
   # the entire handlers section) when there are no static files defined.
 - url: /.*
   script: auto
+  
+env_variables:
+  CLOUD_STORAGE_NAME: "app_engine_ultra"
