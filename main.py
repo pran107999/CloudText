@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from PyPDF2 import PdfReader
 import openai
 import logging
+import os
 from time import strftime
 import google.cloud.logging
 
@@ -13,7 +14,7 @@ summaries = {}
 
 logging.basicConfig(level=logging.INFO)
 
-openai.api_key = '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'
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 MAX_TOKENS = 4000
 
 @app.route('/')
