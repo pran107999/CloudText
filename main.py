@@ -7,7 +7,7 @@ from time import strftime
 app = Flask(__name__)
 summaries = {}
 
-logging.basicConfig(filename='app_{}.log'.format(strftime('%d_%b_%y')),level=logging.INFO, format='%(asctime)s %(levelname)s %(threadName)s %(process)d: %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(threadName)s %(process)d: %(message)s', datefmt='%d-%b-%y %H:%M:%S')
 
 openai.api_key = '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'
 MAX_TOKENS = 4000
