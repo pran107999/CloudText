@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from PyPDF2 import PdfReader
 import openai
 import logging
+from time import strftime
 
 app = Flask(__name__)
 summaries = {}
