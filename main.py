@@ -1,20 +1,24 @@
 from flask import Flask, render_template, request, jsonify
 from PyPDF2 import PdfReader
 import openai
+import logging
 
 app = Flask(__name__)
 summaries = {}
 
+logging.basicConfig(filename='app.log',level=logging.DEBUG, format='%(asctime)s %(levelname)s %(threadName)s : %(message)s')
 
 openai.api_key = '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'
 MAX_TOKENS = 4000
 
 @app.route('/')
 def index():
+    logging.info('Inside' + index.__name__ + '()')
     return render_template('index1.html')
 
 @app.route('/api/upload_and_summarize', methods=['POST'])
 def upload_and_summarize():
+    logging.info('Inside' + upload_and_summarize.__name__+ '()')
     if 'file' in request.files:
         pdf_file = request.files['file']
         if pdf_file.filename != '':
@@ -43,6 +47,7 @@ def upload_and_summarize():
 
 @app.route('/summary/<int:summary_id>')
 def show_summary(summary_id):
+    logging.info('Inside' + show_summary.__name__+ '()')
     summary = summaries.get(summary_id)
     if summary:
         return render_template('summary1.html', summary=summary)
@@ -50,6 +55,7 @@ def show_summary(summary_id):
         return "Summary not found."
 
 def extract_text_from_pdf(pdf_file):
+    logging.info('Inside' + extract_text_from_pdf.__name__+ '()')
     pdf_reader = PdfReader(pdf_file)
     text = ''
     for page_num in range(len(pdf_reader.pages)):
@@ -58,6 +64,7 @@ def extract_text_from_pdf(pdf_file):
     return text
 
 def generate_summary(content):
+    logging.info('Inside' + generate_summary.__name__+ '()')
     chunks = [content[i:i + MAX_TOKENS] for i in range(0, len(content), MAX_TOKENS)]
     summaries = []
     for chunk in chunks:
