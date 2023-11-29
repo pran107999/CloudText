@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 from PyPDF2 import PdfReader
-from google.cloud import secretmanager, logging
+from google.cloud import secretmanager
 from time import strftime
 import openai
+import google.cloud.logging
 import logging
 
 
