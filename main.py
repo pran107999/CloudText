@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 from PyPDF2 import PdfReader
+from google.cloud import secretmanager, logging
+from time import strftime
 import openai
 import logging
-import os
-from time import strftime
-import google.cloud.logging
+
 
 client = google.cloud.logging.Client()
 client.setup_logging()
@@ -14,8 +14,12 @@ summaries = {}
 
 logging.basicConfig(level=logging.INFO)
 
-openai.api_key = os.environ.get("OPENAI_API_KEY")
+openai.api_key = getOpenaiSecret()
 MAX_TOKENS = 4000
+
+def getOpenaiSecret():
+    client = secretmanager.SecretManagerServiceClient()
+    return client.access_secret_version(request={"name": "projects/1018379038222/secrets/OPENAI_API_KEY/versions/1"}).payload.data.decode("UTF-8")
 
 @app.route('/')
 def index():
