@@ -14,7 +14,7 @@ class WebpageOpenTest(unittest.TestCase):
         self.driver.get(webpage_url)
 
         
-        expected_title = 'Text Summarizatio'
+        expected_title = 'Text Summarization'
         actual_title = self.driver.title
         self.assertEqual(actual_title, expected_title, f"Expected title: {expected_title}, Actual title: {actual_title}")
         
