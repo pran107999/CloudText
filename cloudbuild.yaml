@@ -1,10 +1,10 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['c', 'python3', '/usr/lib/google-cloud-sdk/dev_appserver.py --application=ultra-thought-397322 app.yaml --port=9000']
+  args: ['-c', 'python3', '/usr/lib/google-cloud-sdk/dev_appserver.py --application=ultra-thought-397322 app.yaml --port=9000']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['c', 'python3', '-m', 'pytest']
+  args: ['-c', 'python3', '-m', 'pytest']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
