@@ -1,7 +1,7 @@
 steps:
 - name: 'python'
   entrypoint: 'python'
-  args: ['-m', '/usr/lib/google-cloud-sdk/dev_appserver.py --application=ultra-thought-397322 app.yaml --port=9000']
+  args: ['-m', 'dev_appserver.py --runtime_python_path=/usr/bin/python3 --application=ultra-thought-397322 app.yaml --port=9000']
 - name: 'python'
   entrypoint: 'python'
   args: ['-m', 'pytest']
