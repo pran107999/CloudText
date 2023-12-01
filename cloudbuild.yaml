@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
-  args: ['python3', '/usr/lib/google-cloud-sdk/dev_appserver.py --runtime_python_path=/usr/bin/python3 --application=ultra-thought-397322 app.yaml --port=9000']
+  args: ['python3', '/usr/lib/google-cloud-sdk/dev_appserver.py --runtime_python_path=python3 --application=ultra-thought-397322 app.yaml --port=9000']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['python3', '-m', 'pytest']
