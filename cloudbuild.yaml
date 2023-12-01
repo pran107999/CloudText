@@ -1,4 +1,7 @@
 steps:
+- name: 'python3'
+  entrypoint: 'python3'
+  args: ['python3 dev_appserver.py --runtime_python_path=/usr/bin/python3 --application=ultra-thought-397322 app.yaml --port=9000']
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']

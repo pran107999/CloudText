@@ -9,3 +9,5 @@ PyPDF2==3.0.1
 openai==0.28.0
 google-cloud-logging
 google-cloud-secret-manager
+selenium
+pytest
