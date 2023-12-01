@@ -1,7 +1,7 @@
 steps:
 - name: 'python'
   entrypoint: 'python'
-  args: ['-m', 'pip', 'install', 'pytest', 'sselenium', '--user']
+  args: ['-m', 'pip', 'install', 'pytest', 'selenium', '--user']
 - name: 'python'
   entrypoint: 'python'
   args: ['-m', 'pytest']
