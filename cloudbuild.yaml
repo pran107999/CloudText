@@ -1,4 +1,6 @@
 steps:
+- name: 'list recursively'
+  args: ['ls', '-R']
 - name: 'python'
   entrypoint: 'python'
   args: ['-m', 'pip', 'install', '-r', 'Text-Summeriser_CloudComputing/requirements.txt']
