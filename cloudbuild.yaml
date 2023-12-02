@@ -4,7 +4,7 @@ steps:
   args: ['ls', '-R']
 - name: 'python'
   entrypoint: 'python'
-  args: ['-m', 'pip', 'install', '-r', 'Text-Summeriser_CloudComputing/requirements.txt']
+  args: ['-m', 'pip', 'install', '-r', 'requirements.txt']
 - name: 'python'
   entrypoint: 'python'
   args: ['-m', 'pytest']
