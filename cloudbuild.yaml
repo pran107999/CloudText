@@ -1,7 +1,7 @@
 steps:
 - name: 'python'
   entrypoint: 'python'
-  args: ['-m', 'pip', 'install', 'pytest', 'selenium', 'Flask==2.2.2', '--user']
+  args: ['-m', 'pip', 'install', 'r', '/Text-Summeriser_CloudComputing/requirements.txt', --user']
 - name: 'python'
   entrypoint: 'python'
   args: ['-m', 'pytest']
