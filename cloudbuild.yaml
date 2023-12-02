@@ -1,5 +1,5 @@
 steps:
-- name: 'list recursively'
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'bash'
   args: ['ls', '-R']
 - name: 'python'
