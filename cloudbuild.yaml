@@ -1,7 +1,7 @@
 steps:
 - name: 'python'
   entrypoint: 'python'
-  args: ['-m', 'pip', 'install', 'r', '/Text-Summeriser_CloudComputing/requirements.txt']
+  args: ['-m', 'pip', 'install', '-r', 'Text-Summeriser_CloudComputing/requirements.txt']
 - name: 'python'
   entrypoint: 'python'
   args: ['-m', 'pytest']
